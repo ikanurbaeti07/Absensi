@@ -26,9 +26,11 @@ public class KelasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kelas);
+
         rvKelas=(RecyclerView)findViewById(R.id.rv_kelas);
         layoutManager = new LinearLayoutManager(this);
         rvKelas.setLayoutManager(layoutManager);
+
         Intent intent = getIntent();
         int i=intent.getIntExtra("idnya",2);
         apiIntKelas=ApiClient.getApiClient().create(ApiIntKelas.class);
